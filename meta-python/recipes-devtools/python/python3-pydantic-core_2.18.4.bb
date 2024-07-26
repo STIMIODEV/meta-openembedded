@@ -19,9 +19,13 @@ inherit pypi cargo-update-recipe-crates python_maturin
 
 PYPI_PACKAGE = "pydantic_core"
 
-RDEPENDS:${PN} += "python3-typing-extensions"
+RDEPENDS:${PN} += " \
+    python3-compression \
+    python3-typing-extensions \
+"
 
 INSANE_SKIP:${PN} = "already-stripped"
+INSANE_SKIP:${PN} += "buildpaths"
 
 inherit ptest
 SRC_URI += "file://run-ptest"
