@@ -25,7 +25,6 @@ RDEPENDS:${PN} += " \
 "
 
 INSANE_SKIP:${PN} = "already-stripped"
-INSANE_SKIP:${PN} += "buildpaths"
 
 inherit ptest
 SRC_URI += "file://run-ptest"
